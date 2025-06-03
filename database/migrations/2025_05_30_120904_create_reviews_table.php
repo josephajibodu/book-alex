@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('escort_profile_id')->constrained('profiles')->onDelete('cascade');
+            $table->foreignId('profile_id')->constrained()->cascadeOnDelete();
             $table->string('name');
-            $table->text('content');
-            $table->integer('rating')->unsigned()->checkBetween(1, 5);
+            $table->text('content')->nullable();
+            $table->unsignedInteger('rating')->nullable();
             $table->boolean('is_approved')->default(false);
             $table->timestamps();
         });

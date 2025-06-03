@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('escort_profile_id')->constrained('profiles')->onDelete('cascade');
+            $table->foreignId('profile_id')->constrained()->cascadeOnDelete();
             $table->string('fullname');
             $table->string('phone');
             $table->string('zipcode');
