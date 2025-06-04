@@ -29,4 +29,8 @@ Route::get('natasha-galleries', function () {
     return view('natasha-galleries');
 })->name('natasha.galleries');
 
+Route::get('booking', function () {
+    return view('booking');
+});
+
 require __DIR__.'/auth.php';
