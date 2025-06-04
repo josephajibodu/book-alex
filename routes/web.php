@@ -21,4 +21,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
 });
 
+Route::get('natasha', function () {
+    return view('natasha');
+})->name('natasha');
+
 require __DIR__.'/auth.php';
