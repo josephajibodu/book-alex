@@ -45,11 +45,10 @@ class ProfileResource extends Resource
                         RichEditor::make('hobbies')->nullable(),
                         Toggle::make('is_active')->default(true),
                     ]),
-                Section::make('About Section')
+                Section::make('Booking Section')
                     ->collapsed()
                     ->schema([
-                        RichEditor::make('about_me')->required(),
-                        SpatieMediaLibraryFileUpload::make('about_image')->collection('about'),
+                        SpatieMediaLibraryFileUpload::make('booking')->collection('about'),
                     ]),
                 Section::make('Gallery')
                     ->collapsed()
@@ -65,7 +64,11 @@ class ProfileResource extends Resource
             ->defaultPaginationPageOption(50)
             ->columns([
                 TextColumn::make('name')->sortable()->searchable(),
-                TextColumn::make('slug')->sortable()->searchable(),
+                TextColumn::make('slug')
+                    ->label('Profile URL')
+                    ->formatStateUsing(fn ($state, $record) => url('/profile/' . $record->slug))
+                    ->sortable()
+                    ->searchable(),
                 IconColumn::make('is_active')->boolean(),
             ])
             ->filters([

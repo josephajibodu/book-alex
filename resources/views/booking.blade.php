@@ -1,4 +1,4 @@
-<x-layouts.guest :title="__('Booking')">
+<x-layouts.guest :title="__('Book Natasha')">
     <section class="relative w-full px-3 antialiased bg-gradient-to-br from-gray-900 via-black to-gray-800 lg:px-6">
         <div class="relative mx-auto max-w-7xl">
             <div class="container px-6 py-20 mx-auto md:text-center md:px-4">

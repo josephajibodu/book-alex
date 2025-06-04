@@ -9,32 +9,23 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+Route::group(['prefix' => 'p'], function () {
+    Route::redirect('/', '/');
 
-Route::middleware(['auth'])->group(function () {
-    Route::redirect('settings', 'settings/profile');
+    Route::get('{profile:slug}', function () {
+        return view('natasha');
+    })->name('profile');
 
-    Route::get('settings/profile', Profile::class)->name('settings.profile');
-    Route::get('settings/password', Password::class)->name('settings.password');
-    Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
-});
 
-Route::get('natasha', function () {
-    return view('natasha');
-})->name('natasha');
+    Route::get('{profile:slug}/galleries', function () {
+        return view('natasha-galleries');
+    })->name('profile.galleries');
 
-Route::get('natasha-galleries', function () {
-    return view('natasha-galleries');
-})->name('natasha.galleries');
-
-Route::get('booking', function () {
-    return view('booking');
+    Route::get('{profile:slug}/booking', function () {
+        return view('booking');
+    })->name('profile.booking');
 });
 
 Route::get('house-rules', function () {
     return view('house-rules');
-});
-
-require __DIR__.'/auth.php';
+})->name('house-rules');

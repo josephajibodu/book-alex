@@ -42,6 +42,12 @@ class Profile extends Model implements HasMedia
     {
         $this->addMediaCollection('gallery')
             ->useDisk('public');
+
+        $this->addMediaCollection('featured')
+            ->useDisk('public');
+
+        $this->addMediaCollection('bookings')
+            ->useDisk('public');
     }
 
     public function registerMediaConversions(Media $media = null): void
