@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     @include('partials.head')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 </head>
 <body class="font-sans antialiased">
     <!-- Header -->
@@ -58,7 +59,6 @@
     <main>
         {{ $slot }}
     </main>
-    @fluxScripts
     <footer class="bg-black/90">
         <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
             <nav class="flex flex-wrap justify-center -mx-5 -my-2">
@@ -116,5 +116,17 @@
             </p>
         </div>
     </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+
+    <script type="text/javascript">
+        const lightbox = GLightbox({
+            touchNavigation: true,
+            loop: true,
+            autoplayVideos: true,
+        });
+    </script>
+    @fluxScripts
 </body>
 </html>
