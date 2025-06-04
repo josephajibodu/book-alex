@@ -33,4 +33,8 @@ Route::get('booking', function () {
     return view('booking');
 });
 
+Route::get('house-rules', function () {
+    return view('house-rules');
+});
+
 require __DIR__.'/auth.php';
