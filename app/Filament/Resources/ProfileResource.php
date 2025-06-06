@@ -89,7 +89,8 @@ class ProfileResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\ReviewsRelationManager::make(),
+            RelationManagers\BookingsRelationManager::make()
         ];
     }
 
