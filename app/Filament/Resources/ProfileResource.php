@@ -48,7 +48,7 @@ class ProfileResource extends Resource
                 Section::make('Booking Section')
                     ->collapsed()
                     ->schema([
-                        SpatieMediaLibraryFileUpload::make('booking')->collection('about'),
+                        SpatieMediaLibraryFileUpload::make('bookings')->collection('bookings'),
                     ]),
                 Section::make('Gallery')
                     ->collapsed()

@@ -19,4 +19,15 @@ class ProfileController extends Controller
 
         return view('profile', compact('profile'));
     }
+
+    /**
+     * Show the booking form for the specified profile.
+     *
+     * @param  \App\Models\Profile  $profile
+     * @return \Illuminate\View\View
+     */
+    public function booking(Profile $profile)
+    {
+        return view('booking', compact('profile'));
+    }
 }

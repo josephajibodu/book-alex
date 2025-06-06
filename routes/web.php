@@ -19,9 +19,7 @@ Route::group(['prefix' => 'p'], function () {
         return view('galleries');
     })->name('profile.galleries');
 
-    Route::get('{profile:slug}/booking', function () {
-        return view('booking');
-    })->name('profile.booking');
+    Route::get('{profile:slug}/booking', [ProfileController::class, 'booking'])->name('profile.booking');
 });
 
 Route::get('house-rules', function () {
