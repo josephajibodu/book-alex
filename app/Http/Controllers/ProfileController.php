@@ -30,4 +30,15 @@ class ProfileController extends Controller
     {
         return view('booking', compact('profile'));
     }
+
+    /**
+     * Show the galleries for the specified profile.
+     *
+     * @param  \App\Models\Profile  $profile
+     * @return \Illuminate\View\View
+     */
+    public function galleries(Profile $profile)
+    {
+        return view('galleries', compact('profile'));
+    }
 }

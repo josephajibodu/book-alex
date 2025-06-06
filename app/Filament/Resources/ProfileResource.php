@@ -53,7 +53,9 @@ class ProfileResource extends Resource
                 Section::make('Gallery')
                     ->collapsed()
                     ->schema([
-                        SpatieMediaLibraryFileUpload::make('gallery')->collection('gallery'),
+                        SpatieMediaLibraryFileUpload::make('gallery')
+                            ->multiple(true)
+                            ->collection('gallery'),
                     ]),
             ]);
     }

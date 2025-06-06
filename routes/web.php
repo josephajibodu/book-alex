@@ -15,9 +15,7 @@ Route::group(['prefix' => 'p'], function () {
 
     Route::get('{profile:slug}', [ProfileController::class, 'show'])->name('profile');
 
-    Route::get('{profile:slug}/galleries', function () {
-        return view('galleries');
-    })->name('profile.galleries');
+    Route::get('{profile:slug}/galleries', [ProfileController::class, 'galleries'])->name('profile.galleries');
 
     Route::get('{profile:slug}/booking', [ProfileController::class, 'booking'])->name('profile.booking');
 });
