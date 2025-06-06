@@ -1,7 +1,12 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-DCzJ6Ia0.css",
+    "file": "assets/app-B3lK-cBa.css",
     "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/trix.css": {
+    "file": "assets/trix-vJvWIbTj.css",
+    "src": "resources/css/trix.css",
     "isEntry": true
   },
   "resources/js/app.js": {

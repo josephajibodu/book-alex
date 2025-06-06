@@ -8,11 +8,11 @@
                         <img src="{{ $profile->getFirstMediaUrl('featured') }}" alt="{{ $profile->name }}" class="w-full mx-auto rounded-lg shadow-lg">
                     </div>
                     <div class="text-left md:w-1/2">
-                        <div class="mt-4 text-gray-200!">
+                        <div class="mt-4 text-gray-200! trix-content">
                             {!! $profile->intro !!}
                         </div>
-                        <div class="text-gray-200!">
-                            <h2 class="mt-8 text-2xl font-bold text-white">Hobbies</h2>
+                        <div class="text-gray-200! trix-content">
+                            <h2 class="text-2xl mt-0! font-bold text-white">Hobbies</h2>
                             {!! $profile->hobbies  !!}
                         </div>
                         <div class="mt-8">
