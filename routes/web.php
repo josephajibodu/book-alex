@@ -4,6 +4,7 @@ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -12,13 +13,10 @@ Route::get('/', function () {
 Route::group(['prefix' => 'p'], function () {
     Route::redirect('/', '/');
 
-    Route::get('{profile:slug}', function () {
-        return view('natasha');
-    })->name('profile');
-
+    Route::get('{profile:slug}', [ProfileController::class, 'show'])->name('profile');
 
     Route::get('{profile:slug}/galleries', function () {
-        return view('natasha-galleries');
+        return view('galleries');
     })->name('profile.galleries');
 
     Route::get('{profile:slug}/booking', function () {
