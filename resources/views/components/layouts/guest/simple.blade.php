@@ -14,7 +14,7 @@
                     <span class="flex items-center justify-center flex-shrink-0 w-8 h-8 text-gray-900 rounded-full bg-gradient-to-br from-white via-gray-200 to-white">
                         <svg class="w-auto h-5 -translate-y-px" viewBox="0 0 69 66" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m31.2 12.2-3.9 12.3-13.4.5-13.4.5 10.7 7.7L21.8 41l-3.9 12.1c-2.2 6.7-3.8 12.4-3.6 12.5.2.2 5-3 10.6-7.1 5.7-4.1 10.9-7.2 11.5-6.8.6.4 5.3 3.8 10.5 7.5 5.2 3.8 9.6 6.6 9.8 6.4.2-.2-1.4-5.8-3.6-12.5l-3.9-12.2 8.5-6.2c14.7-10.6 14.8-9.6-.4-9.7H44.2L40 12.5C37.7 5.6 35.7 0 35.5 0c-.3 0-2.2 5.5-4.3 12.2Z" fill="currentColor"/></svg>
                     </span>
-                        <span>FantasyFriends</span>
+                        <span>LustrousAffairs</span>
                     </a>
                     <div :class="{'flex': showMenu, 'hidden md:flex': !showMenu }" class="absolute z-50 flex-col items-center justify-center w-full h-auto px-2 text-center text-gray-400 -translate-x-1/2 border-0 border-gray-700 rounded-full md:border md:w-auto md:h-10 left-1/2 md:flex-row md:items-center">
                         <a href="{{ route('home') }}" class="relative inline-block w-full h-full px-4 py-5 mx-2 font-medium leading-tight text-center text-white md:py-2 group md:w-auto md:px-2 lg:mx-3 md:text-center {{ request()->routeIs('home') ? 'active' : '' }}">
@@ -67,16 +67,29 @@
     <main>
         {{ $slot }}
     </main>
+
+    <!-- Support Section -->
+    <section class="bg-[#191a1b] py-16 border-b border-gray-950">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 px-4">
+            <div class="flex-1 flex justify-center">
+                <div class="relative">
+                    <img src="{{ asset('/images/support-us.jpg') }}" alt="Support" class="rounded-lg w-full max-w-md shadow-lg">
+                    <div class="absolute inset-0 border-dotted border-2 border-gray-800 rounded-lg pointer-events-none" style="z-index:1;"></div>
+                </div>
+            </div>
+            <div class="flex-1 text-center md:text-left">
+                <h2 class="text-3xl font-bold text-white mb-4">Need Help?<br>We are always online</h2>
+                <p class="text-2xl font-bold text-pink-500">support@lustrousaffairs.com</p>
+            </div>
+        </div>
+    </section>
+    <!-- End Support Section -->
+
     <footer class="bg-black/90">
         <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
             <div class="flex justify-center">
                 <p class="text-base leading-6 text-center text-gray-400">
-                    Contact
-                </p>
-            </div>
-            <div class="flex justify-center">
-                <p class="text-base leading-6 text-center text-gray-400">
-                    lustrousaffairs@gmail.com
+                    support@lustrousaffairs.com
                 </p>
             </div>
             <p class="mt-8 text-base leading-6 text-center text-gray-400">
