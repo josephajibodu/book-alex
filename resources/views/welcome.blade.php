@@ -10,6 +10,15 @@
         </div>
     </section>
 
+    <section class="relative w-full py-20 bg-[#191a1b] flex flex-col items-center justify-center">
+        <hr class="w-3/4 border-gray-800 mb-12">
+        <div class="flex flex-col items-center justify-center text-center">
+            <span class="text-6xl text-gray-300 mb-6">&ldquo;</span>
+            <h2 class="text-3xl md:text-5xl font-light text-white mb-8 max-w-3xl">Every unforgettable experience begins with the right company.</h2>
+        </div>
+        <hr class="w-3/4 border-gray-800 mt-12">
+    </section>
+
     <section class="relative w-full px-3 py-24 antialiased bg-gray-950 lg:px-6">
         <div class="relative mx-auto max-w-7xl">
             <div class="container px-6 mx-auto md:text-center md:px-4">

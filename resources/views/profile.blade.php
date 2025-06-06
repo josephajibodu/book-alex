@@ -15,16 +15,15 @@
                             <h2 class="mt-8 text-2xl font-bold text-white">Hobbies</h2>
                             {!! $profile->hobbies  !!}
                         </div>
+                        <div class="mt-8">
+                            <flux:button href="{{ route('profile.booking', $profile) }}" type="button" class="w-full h-14 text-lg font-bold text-white transition duration-150 ease-in-out bg-green-500 border border-transparent rounded-md hover:bg-green-400 focus:outline-none active:bg-green-400">
+                                Book Me
+                            </flux:button>
+                        </div>
                     </div>
                 </div>
                 <div class="mt-12">
                     @livewire('reviews', ['profile' => $profile])
-                </div>
-
-                <div class="mt-12">
-                    <flux:button href="{{ route('profile.booking', $profile) }}" type="button" class="inline-flex items-center w-48 h-12 px-8 text-base font-bold leading-6 text-white transition duration-150 ease-in-out bg-green-500 border border-transparent rounded-md hover:bg-green-400 focus:outline-none active:bg-green-400">
-                        Book Me
-                    </flux:button>
                 </div>
             </div>
         </div>
