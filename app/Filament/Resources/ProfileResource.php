@@ -36,19 +36,24 @@ class ProfileResource extends Resource
                     ->schema([
                         Grid::make()
                             ->schema([
-                                TextInput::make('name')->required(),
+                                TextInput::make('name')
+                                    ->required(),
                             ]),
                         RichEditor::make('intro')->required(),
                         SpatieMediaLibraryFileUpload::make('featured')
                             ->collection('featured')
-                            ->multiple(false),
-                        RichEditor::make('hobbies')->nullable(),
+                            ->multiple(false)
+                            ->required(),
+                        RichEditor::make('hobbies')
+                            ->nullable(),
                         Toggle::make('is_active')->default(true),
                     ]),
                 Section::make('Booking Section')
                     ->collapsed()
                     ->schema([
-                        SpatieMediaLibraryFileUpload::make('bookings')->collection('bookings'),
+                        SpatieMediaLibraryFileUpload::make('bookings')
+                            ->collection('bookings')
+                            ->required(),
                     ]),
                 Section::make('Gallery')
                     ->collapsed()
