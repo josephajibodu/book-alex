@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->text('intro');
-            $table->longText('about_me');
+            $table->longText('about_me')->nullable();
             $table->text('hobbies')->nullable();
             $table->boolean('is_active')->default(true);
         });
