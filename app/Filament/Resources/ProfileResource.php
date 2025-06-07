@@ -64,11 +64,13 @@ class ProfileResource extends Resource
     {
         return $table
             ->defaultPaginationPageOption(50)
+            ->description('Click the profile URL to copy it.')
             ->columns([
                 TextColumn::make('name')->sortable()->searchable(),
                 TextColumn::make('slug')
                     ->label('Profile URL')
-                    ->formatStateUsing(fn ($state, $record) => url('/profile/' . $record->slug))
+                    ->formatStateUsing(fn ($state, $record) => route('profile', $record))
+                    ->copyable(true)
                     ->sortable()
                     ->searchable(),
                 IconColumn::make('is_active')->boolean(),

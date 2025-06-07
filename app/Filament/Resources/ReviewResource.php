@@ -57,6 +57,7 @@ class ReviewResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make('profile.name')->sortable()->searchable(),
                 TextColumn::make('name')->sortable()->searchable(),
                 TextColumn::make('content')->limit(50),
                 TextColumn::make('rating')->sortable(),

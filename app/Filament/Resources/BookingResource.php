@@ -59,6 +59,7 @@ class BookingResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make('profile.name')->sortable()->searchable(),
                 TextColumn::make('fullname')->sortable()->searchable(),
                 TextColumn::make('phone')->sortable()->searchable(),
                 TextColumn::make('service_type')->sortable(),
