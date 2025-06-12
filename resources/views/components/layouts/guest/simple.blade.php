@@ -71,10 +71,10 @@
     </main>
 
     <!-- Support Section -->
-    <section class="bg-[#191a1b] py-16 border-b border-gray-950">
+    <section class="bg-gradient-to-br from-gray-900 via-black to-gray-800 py-16 border-b border-gray-950">
         <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 px-4">
             <div class="flex-1 flex justify-center"
-                 data-aos="slide-right"
+                 data-aos="fade-right"
                  data-aos-duration="1000">
                 <div class="relative">
                     <img src="{{ asset('/images/support-us.jpg') }}" alt="Support" class="rounded-lg w-full max-w-md shadow-lg">
@@ -83,11 +83,11 @@
             </div>
             <div class="flex-1 text-center md:text-left">
                 <h2 class="text-3xl font-bold text-white mb-4"
-                    data-aos="slide-up"
+                    data-aos="fade-up"
                     data-aos-duration="1000"
                     data-aos-delay="200">Need Help?<br>We are always online</h2>
                 <p class="text-2xl font-bold text-pink-500"
-                   data-aos="slide-up"
+                   data-aos="fade-up"
                    data-aos-duration="1000"
                    data-aos-delay="400">support@lustrousaffairs.com</p>
             </div>
@@ -95,18 +95,16 @@
     </section>
     <!-- End Support Section -->
 
-    <footer class="bg-black/90">
+    <footer class="bg-gradient-to-br from-gray-900 via-black to-gray-800">
         <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
             <div class="flex justify-center"
-                 data-aos="zoom-in-up"
+                 data-aos="zoom-in"
                  data-aos-duration="1000">
                 <p class="text-base leading-6 text-center text-gray-400">
                     support@lustrousaffairs.com
                 </p>
             </div>
             <p class="mt-8 text-base leading-6 text-center text-gray-400"
-               data-aos="slide-up"
-               data-aos-duration="1000"
                data-aos-delay="200">
                 © 2025 lustrousaffairs.com. All rights reserved.
             </p>

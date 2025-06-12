@@ -20,7 +20,7 @@
         </div>
     </section>
 
-    <section class="relative w-full py-20 bg-[#191a1b] flex flex-col items-center justify-center">
+    <section class="relative w-full py-20 bg-gradient-to-br from-gray-900 via-black to-gray-800 flex flex-col items-center justify-center">
         <hr class="w-3/4 border-gray-800 mb-12"
             data-aos="fade-right"
             data-aos-duration="1500"
