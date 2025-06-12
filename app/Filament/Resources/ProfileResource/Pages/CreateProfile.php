@@ -6,7 +6,7 @@ use App\Filament\Resources\ProfileResource;
 use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class CreateProfile extends CreateRecord
 {
@@ -14,7 +14,9 @@ class CreateProfile extends CreateRecord
 
     protected function handleRecordCreation(array $data): Model
     {
-        $data['slug'] = Str::slug($data['name']);
+        $data['about_me'] = $data['intro'];
+
+        $data['user_id'] = Auth::id();
 
         return parent::handleRecordCreation($data);
     }

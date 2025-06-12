@@ -19,6 +19,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\DateTimeColumn;
+use Illuminate\Support\Facades\Auth;
 
 class BookingResource extends Resource
 {
@@ -93,5 +94,18 @@ class BookingResource extends Resource
             'create' => Pages\CreateBooking::route('/create'),
             'edit' => Pages\EditBooking::route('/{record}/edit'),
         ];
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        $query = parent::getEloquentQuery();
+
+        if (Auth::user()->role === 'admin') {
+            return $query;
+        }
+
+        return $query->whereHas('profile', function ($query) {
+            $query->where('user_id', Auth::id());
+        });
     }
 }

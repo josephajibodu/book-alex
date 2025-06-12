@@ -21,6 +21,8 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Grid;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileResource extends Resource
 {
@@ -37,6 +39,30 @@ class ProfileResource extends Resource
                         Grid::make()
                             ->schema([
                                 TextInput::make('name')
+                                    ->required()
+                                    ->live(onBlur: true)
+                                    ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
+                                        if ($operation !== 'create') {
+                                            return;
+                                        }
+                                        $set('slug', Str::slug($state));
+                                    }),
+                                TextInput::make('slug')
+                                    ->reactive()
+                                    ->required()
+                                    ->unique(ignoreRecord: true)
+                                    ->label('Profile URL')
+                                    ->helperText('This will be used in your profile URL')
+                                    ->placeholder('your-profile-url'),
+                                TextInput::make('phone')
+                                    ->tel()
+                                    ->label('Phone Number')
+                                    ->placeholder('Enter phone number')
+                                    ->required(),
+                                TextInput::make('email')
+                                    ->email()
+                                    ->label('Email Address')
+                                    ->placeholder('Enter email address')
                                     ->required(),
                             ]),
                         RichEditor::make('intro')->required(),
@@ -108,5 +134,16 @@ class ProfileResource extends Resource
             'create' => Pages\CreateProfile::route('/create'),
             'edit' => Pages\EditProfile::route('/{record}/edit'),
         ];
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        $query = parent::getEloquentQuery();
+
+        if (Auth::user()->role === 'admin') {
+            return $query;
+        }
+
+        return $query->where('user_id', Auth::id());
     }
 }

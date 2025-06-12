@@ -21,6 +21,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\BooleanColumn;
+use Illuminate\Support\Facades\Auth;
 
 class ReviewResource extends Resource
 {
@@ -91,5 +92,18 @@ class ReviewResource extends Resource
             'create' => Pages\CreateReview::route('/create'),
             // 'edit' => Pages\EditReview::route('/{record}/edit'),
         ];
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        $query = parent::getEloquentQuery();
+
+        if (Auth::user()->role === 'admin') {
+            return $query;
+        }
+
+        return $query->whereHas('profile', function ($query) {
+            $query->where('user_id', Auth::id());
+        });
     }
 }
