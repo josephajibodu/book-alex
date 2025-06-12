@@ -4,6 +4,7 @@
     @include('partials.head')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body class="font-sans antialiased">
     <!-- Header -->
@@ -114,6 +115,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script type="text/javascript">
         const lightbox = GLightbox({
@@ -131,6 +133,42 @@
                 easing: 'ease-in-out',
                 once: false,
                 mirror: true
+            });
+
+            // Initialize Swiper
+            const swiper = new Swiper('.reviews-swiper', {
+                // Optional parameters
+                direction: 'horizontal',
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                // Pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + ' !w-2 !h-2 !bg-white/30 hover:!bg-white/50 !transition-all !duration-300"></span>';
+                    },
+                },
+                // Responsive breakpoints
+                breakpoints: {
+                    // when window width is >= 640px
+                    640: {
+                        slidesPerView: 1,
+                        spaceBetween: 20
+                    }
+                }
             });
         });
     </script>

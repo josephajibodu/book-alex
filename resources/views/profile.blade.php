@@ -77,7 +77,11 @@
                      data-aos="fade-up"
                      data-aos-duration="1000"
                      data-aos-delay="800">
-                    @livewire('reviews', ['profile' => $profile])
+
+                    <!-- Review Form -->
+                    <div class="mt-16 mx-auto">
+                        @livewire('reviews', ['profile' => $profile])
+                    </div>
                 </div>
             </div>
         </div>
