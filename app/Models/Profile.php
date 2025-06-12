@@ -3,8 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
+use Illuminate\Notifications\Notifiable;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -24,9 +26,14 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  */
 class Profile extends Model implements HasMedia
 {
-    use InteractsWithMedia;
+    use InteractsWithMedia, Notifiable;
 
     protected $guarded = ['id'];
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function reviews(): HasMany
     {
@@ -56,5 +63,10 @@ class Profile extends Model implements HasMedia
             ->width(368)
             ->height(232)
             ->sharpen(10);
+    }
+
+    public function routeNotificationForMail()
+    {
+        return $this->email;
     }
 }
