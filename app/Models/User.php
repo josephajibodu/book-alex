@@ -22,6 +22,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'profile_limit',
     ];
 
     /**
@@ -56,5 +58,13 @@ class User extends Authenticatable
             ->explode(' ')
             ->map(fn (string $name) => Str::of($name)->substr(0, 1))
             ->implode('');
+    }
+
+    /**
+     * Get the user's profiles
+     */
+    public function profiles()
+    {
+        return $this->hasMany(Profile::class);
     }
 }

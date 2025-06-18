@@ -93,9 +93,15 @@ class ProfileResource extends Resource
 
     public static function table(Table $table): Table
     {
+        $user = Auth::user();
+        $currentCount = $user->profiles()->count();
+        $limit = $user->profile_limit;
+        $limitText = $limit === null ? 'Unlimited' : $limit;
+        $countText = "{$currentCount}/{$limitText} profiles";
+
         return $table
             ->defaultPaginationPageOption(50)
-            ->description('Click the profile URL to copy it.')
+            ->description("Your profiles: {$countText} • Click the profile URL to copy it.")
             ->columns([
                 TextColumn::make('name')->sortable()->searchable(),
                 TextColumn::make('slug')
@@ -145,5 +151,15 @@ class ProfileResource extends Resource
         }
 
         return $query->where('user_id', Auth::id());
+    }
+
+    public static function canCreate(): bool
+    {
+        $user = Auth::user();
+        $currentCount = $user->profiles()->count();
+        $profileLimit = $user->profile_limit;
+
+        // Allow creation if unlimited or under limit
+        return $profileLimit === null || $currentCount < $profileLimit;
     }
 }

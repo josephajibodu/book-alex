@@ -9,4 +9,13 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateUser extends CreateRecord
 {
     protected static string $resource = UserResource::class;
+
+    protected function mutateFormDataBeforeCreate(array $data): array
+    {
+        if (empty($data['profile_limit'])) {
+            $data['profile_limit'] = null;
+        }
+
+        return $data;
+    }
 }

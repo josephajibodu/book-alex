@@ -16,4 +16,13 @@ class EditUser extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    protected function mutateFormDataBeforeSave(array $data): array
+    {
+        if (empty($data['profile_limit'])) {
+            $data['profile_limit'] = null;
+        }
+
+        return $data;
+    }
 }
