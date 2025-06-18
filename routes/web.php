@@ -30,7 +30,7 @@ Route::get('/test-email', function () {
         'message' => 'This is a test booking message.'
     ];
 
-    Mail::to('josephajibodu@gmail.com')->send(new \App\Mail\BookingSubmitted($booking));
+    Mail::to('support@lustrousaffairs.com')->send(new \App\Mail\BookingSubmitted($booking));
 
     return 'Test email sent!';
 });
