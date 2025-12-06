@@ -10,7 +10,7 @@
 
 <body class="font-sans antialiased">
     <!-- Header -->
-    <header class="w-full px-3 antialiased bg-black lg:px-6">
+    <header class="w-full px-3 antialiased bg-slate-900 lg:px-6">
         <div class="mx-auto max-w-7xl">
             <nav class="flex items-center w-full h-24 select-none" x-data="{ showMenu: false }">
                 <div
@@ -68,7 +68,7 @@
                     <div class="fixed top-0 left-0 z-40 items-center hidden w-full h-full p-3 text-sm bg-gray-900 bg-opacity-50 md:w-auto md:bg-transparent md:p-0 md:relative smd:flex"
                         :class="{'flex': showMenu, 'hidden': !showMenu }">
                         <div
-                            class="flex-col items-center w-full h-full p-3 overflow-hidden bg-black bg-opacity-50 rounded-lg select-none md:p-0 backdrop-blur-lg md:h-auto md:bg-transparent md:rounded-none md:relative md:flex md:flex-row md:overflow-auto">
+                            class="flex-col items-center w-full h-full p-3 overflow-hidden bg-slate-900 bg-opacity-50 rounded-lg select-none md:p-0 backdrop-blur-lg md:h-auto md:bg-transparent md:rounded-none md:relative md:flex md:flex-row md:overflow-auto">
                             <div
                                 class="flex flex-col items-center justify-end w-full h-full pt-2 md:w-full md:flex-row md:py-0">
                                 {{-- <a href="#_"
@@ -104,7 +104,7 @@
     </main>
 
     <!-- Support Section -->
-    <section class="bg-gradient-to-br from-gray-900 via-black to-gray-800 py-16 border-b border-gray-950">
+    <section class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 py-16 border-b border-slate-950">
         <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 px-4">
             <div class="flex-1 flex justify-center" data-aos="fade-right" data-aos-duration="1000">
                 <div class="relative">
@@ -117,14 +117,14 @@
             <div class="flex-1 text-center md:text-left">
                 <h2 class="text-3xl font-bold text-white mb-4" data-aos="fade-up" data-aos-duration="1000"
                     data-aos-delay="200">Need Help?<br>We are always online</h2>
-                <p class="text-2xl font-bold text-pink-500" data-aos="fade-up" data-aos-duration="1000"
+                <p class="text-2xl font-bold text-indigo-400" data-aos="fade-up" data-aos-duration="1000"
                     data-aos-delay="400">support@book-alex.com</p>
             </div>
         </div>
     </section>
     <!-- End Support Section -->
 
-    <footer class="bg-gradient-to-br from-gray-900 via-black to-gray-800">
+    <footer class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900">
         <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
             <div class="flex justify-center" data-aos="zoom-in" data-aos-duration="1000">
                 <p class="text-base leading-6 text-center text-gray-400">
