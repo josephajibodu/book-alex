@@ -55,10 +55,10 @@
                         </div>
 
                         <div class="mt-8" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="700">
-                            <flux:button href="{{ route('profile.booking', $profile) }}" type="button"
-                                class="w-full h-14 text-lg font-bold text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none active:bg-indigo-500">
+                            <a href="{{ route('profile.booking', $profile) }}"
+                                class="inline-flex items-center justify-center w-full h-14 text-lg font-bold text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:bg-indigo-700">
                                 Book Me
-                            </flux:button>
+                            </a>
                         </div>
                     </div>
                 </div>
