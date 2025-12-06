@@ -9,8 +9,26 @@
                 </h1>
                 <div class="flex flex-col md:flex-row md:space-x-8 mt-8">
                     <div class="md:w-1/2 md:mt-0 text-left" data-aos="slide-right" data-aos-duration="1000">
-                        <img src="{{ $profile->getFirstMediaUrl('featured') }}" alt="{{ $profile->name }}"
-                            class="w-full mx-auto rounded-lg shadow-lg">
+                        @php
+                            $featuredVideo = $profile->getFirstMedia('featured_video');
+                            $usePicture = $profile->use_picture_instead_of_video;
+                            $showVideo = !$usePicture && $featuredVideo;
+                        @endphp
+                        @if($showVideo)
+                            <video 
+                                src="{{ $featuredVideo->getUrl() }}" 
+                                class="w-full mx-auto rounded-lg shadow-lg"
+                                autoplay 
+                                loop 
+                                muted
+                                playsinline
+                                style="object-fit: cover;">
+                                Your browser does not support the video tag.
+                            </video>
+                        @else
+                            <img src="{{ $profile->getFirstMediaUrl('featured') }}" alt="{{ $profile->name }}"
+                                class="w-full mx-auto rounded-lg shadow-lg">
+                        @endif
 
                         <div class="text-gray-200! trix-content" data-aos="fade-up" data-aos-duration="1000"
                             data-aos-delay="200">

@@ -53,6 +53,10 @@ class Profile extends Model implements HasMedia
         $this->addMediaCollection('featured')
             ->useDisk('public');
 
+        $this->addMediaCollection('featured_video')
+            ->useDisk('public')
+            ->acceptsMimeTypes(['video/mp4', 'video/webm', 'video/ogg', 'video/quicktime']);
+
         $this->addMediaCollection('bookings')
             ->useDisk('public');
     }

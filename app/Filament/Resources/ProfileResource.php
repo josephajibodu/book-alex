@@ -70,6 +70,18 @@ class ProfileResource extends Resource
                             ->collection('featured')
                             ->multiple(false)
                             ->required(),
+                        SpatieMediaLibraryFileUpload::make('featured_video')
+                            ->collection('featured_video')
+                            ->multiple(false)
+                            ->label('Featured Video (Optional)')
+                            ->helperText('Max size: 50MB. If provided, video will be used instead of image unless "Use Picture Instead" is enabled.')
+                            ->acceptedFileTypes(['video/mp4', 'video/webm', 'video/ogg', 'video/quicktime'])
+                            ->maxSize(51200) // 50MB in KB
+                            ->nullable(),
+                        Toggle::make('use_picture_instead_of_video')
+                            ->label('Use Picture Instead of Video')
+                            ->helperText('Enable this to always use the featured image, even if a video is provided.')
+                            ->default(false),
                         RichEditor::make('hobbies')
                             ->nullable(),
                         Toggle::make('is_active')->default(true),
