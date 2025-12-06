@@ -16,8 +16,9 @@
                 <div
                     class="relative flex flex-wrap items-start justify-between w-full mx-auto font-medium md:items-center md:h-24 md:justify-between">
                     <a href="#_"
-                        class="flex items-center w-1/4 py-4 pl-6 pr-4 space-x-2 font-extrabold text-white md:py-0">
-                        <span class="dynapuff-bold text-3xl">BookAlex</span>
+                        class="flex items-center md:w-1/4 py-4 pl-6 pr-4 font-extrabold text-white md:py-0">
+                        <span class="dynapuff-bold text-xl md:text-3xl">BookAlex</span>
+                        <x-sexy />
                     </a>
                     <div :class="{'flex': showMenu, 'hidden md:flex': !showMenu }"
                         class="absolute z-50 flex-col items-center justify-center w-full h-auto px-2 text-center text-gray-400 -translate-x-1/2 border-0 border-gray-700 rounded-full md:border md:w-auto md:h-10 left-1/2 md:flex-row md:items-center">
