@@ -5,7 +5,8 @@
             <div class="container px-6 py-20 mx-auto md:text-center md:px-4">
                 <h1
                     class="text-4xl font-extrabold leading-none tracking-tight text-white text-center sm:text-5xl md:text-6xl xl:text-7xl">
-                    <span class="block">House Rules</span></h1>
+                    <span class="block">House Rules</span>
+                </h1>
                 <div class="mt-8 text-left text-white">
                     <h2 class="text-2xl font-bold">Meetings</h2>
                     <p>I'm open to hosting or visiting, provided it's in a safe neighborhood. Typically, I prefer
@@ -41,16 +42,40 @@
                         <li>Submissive – $50</li>
                         <li>Domination – $50 extra</li>
                     </ul>
-                    <h2 class="text-2xl font-bold mt-4">Prepayment</h2>
-                    <p>OUTCALLS – To secure our appointment, a prepayment, equivalent to half of the donation, is
-                        required. This requirement is fixed for outcall appointments but can be adjusted for longer
-                        durations like multiple hours or overnight stays. Taking the deposit upfront acts as insurance,
-                        ensuring a smooth and stress-free experience during our time together. Preferred payment methods
-                        include Paypal, Crypto, Chime, or a digital Apple Card for iPhone users. I'm open to other
-                        options as well — just let me know.</p>
-                    <p>INCALLS – If you prefer an incall appointment, you can purchase and bring a prepaid card for
-                        payment, but it must be verified on giftvalidator.com. I accept Apple, eBay, and Sephora gift
-                        cards. In times when a gift card isn't possible, a half deposit will be required.</p>
+                    <h2 class="text-2xl font-bold mt-4">PAYMENT RULES</h2>
+                    <p>For safety reasons and for the most important purpose of remaining discreet, cash payments are
+                        not
+                        allowed. It signifies that you are paying me for sex and that's illegal. I prefer to receive
+                        payment as a donation or gift in discreet means.</p>
+                    <h2 class="text-2xl font-bold mt-4">PREPAYMENT</h2>
+                    <p>To secure your appointment, a prepayment equivalent to half of your total appointment donation is
+                        required. This requirement is fixed for both Incall and outcall appointment but can be adjusted
+                        for longer durations like multiple hours and overnight stays. Taking deposit upfront acts as
+                        insurance, ensuring a smooth and stress free experience during our time together. Prepayment
+                        donations can be made via Apple Pay, Chime, PayPal, Zelle, Venmo and crypto depending on the
+                        payment I have available to receive at the time. It is important that when you make your
+                        donation, you must signify strictly that it is a gift.</p>
+                    <h2 class="text-2xl font-bold mt-4">NON PREPAYMENT FACE TO FACE PAYMENT</h2>
+                    <p>If you do not want to make a prepayment donation because of the fear of unknown, you can make a
+                        gift donation face to face with a gift card by getting a prepaid card of my choice, put the
+                        total
+                        appointment donation on it and give it to me when you see me face to face. I will not ask for a
+                        picture of the card or the code of the card. Also, I will not ask for the receipt neither, nor
+                        any
+                        number on the card.</p>
+                    <p>My preferred prepaid cards are Apple, Sephora, Target, eBay and Walmart only. Incase you get to
+                        the store and there is none of these cards or you are confused about the cards just text me I
+                        will choose another card that works for me.</p>
+                    <h2 class="text-2xl font-bold mt-4">NOTE THAT</h2>
+                    <p>For transparency, you must check the validity and balance of the card on
+                        <a href="https://www.validatemycard.com" target="_blank" rel="noopener noreferrer"
+                            class="text-indigo-400 hover:text-indigo-300 underline">www.validatemycard.com</a> or on
+                        <a href="https://www.vetgiftcards.com" target="_blank" rel="noopener noreferrer"
+                            class="text-indigo-400 hover:text-indigo-300 underline">www.vetgiftcards.com</a> and show
+                        me.
+                        This is for me to be certain that the card is not used and it has the right amount of your
+                        appointment donation on it.
+                    </p>
                 </div>
             </div>
         </div>
