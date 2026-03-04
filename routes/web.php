@@ -3,6 +3,7 @@
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
+use App\Models\HouseRuleSection;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Mail;
@@ -13,7 +14,14 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('house-rules', function () {
-    return view('house-rules');
+    $sections = HouseRuleSection::query()
+        ->where('is_active', true)
+        ->orderBy('position')
+        ->get();
+
+    return view('house-rules', [
+        'sections' => $sections,
+    ]);
 })->name('house-rules');
 
 

@@ -16,6 +16,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
@@ -50,6 +51,12 @@ class ReviewResource extends Resource
                         5 => '5',
                     ])->required(),
                 Toggle::make('is_approved')->default(false),
+                DateTimePicker::make('created_at')
+                    ->label('Review Date')
+                    ->withoutSeconds()
+                    ->maxDate(now())
+                    ->rules(['before_or_equal:now'])
+                    ->helperText('Cannot be set in the future.'),
             ])
             ->columns(1);
     }
@@ -62,6 +69,10 @@ class ReviewResource extends Resource
                 TextColumn::make('name')->sortable()->searchable(),
                 TextColumn::make('content')->limit(50),
                 TextColumn::make('rating')->sortable(),
+                TextColumn::make('created_at')
+                    ->label('Review Date')
+                    ->dateTime('Y-m-d H:i')
+                    ->sortable(),
                 ToggleColumn::make('is_approved')
                     ->onColor(Color::Green),
             ])
