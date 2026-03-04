@@ -20,10 +20,8 @@ class HouseRuleSectionResource extends Resource
     protected static ?string $model = HouseRuleSection::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
-
-    protected static ?string $navigationGroup = 'Content';
-
-    protected static ?string $navigationLabel = 'House Rules';
+    protected static ?string $navigationGroup = null;
+    protected static ?string $navigationLabel = null;
 
     public static function form(Form $form): Form
     {
@@ -85,6 +83,11 @@ class HouseRuleSectionResource extends Resource
             'create' => Pages\CreateHouseRuleSection::route('/create'),
             'edit' => Pages\EditHouseRuleSection::route('/{record}/edit'),
         ];
+    }
+
+    public static function shouldRegisterNavigation(): bool
+    {
+        return false;
     }
 }
 
