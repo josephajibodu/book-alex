@@ -13,6 +13,7 @@ use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
 use Filament\Notifications\Notification;
 use Filament\Pages\Page;
+use Illuminate\Support\Facades\Auth;
 
 class ManageHouseRules extends Page implements HasForms
 {
@@ -27,6 +28,11 @@ class ManageHouseRules extends Page implements HasForms
     protected static string $view = 'filament.pages.manage-house-rules';
 
     public ?array $data = [];
+
+    public static function shouldRegisterNavigation(): bool
+    {
+        return Auth::user()->role === 'admin';
+    }
 
     public function mount(): void
     {
