@@ -34,20 +34,4 @@
             data-aos-easing="ease-in-out">
     </section>
 
-    <section class="relative w-full px-3 py-24 antialiased bg-slate-950 lg:px-6">
-        <div class="relative mx-auto max-w-7xl">
-            <div class="container px-6 mx-auto md:text-center md:px-4">
-                <h2 class="text-2xl font-bold text-white md:text-3xl" data-aos="flip-down" data-aos-duration="1000">Find
-                    Your Perfect Companion</h2>
-                <p class="mx-auto mt-4 text-sm text-gray-300 md:text-center md:mt-6 sm:text-base md:max-w-xl md:text-lg"
-                    data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                    Search through our exclusive selection of companions
-                </p>
-                <div class="max-w-2xl mx-auto mt-8" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="400">
-                    <livewire:search-profiles />
-                </div>
-            </div>
-        </div>
-    </section>
-
 </x-layouts.guest>
