@@ -9,8 +9,11 @@ use Livewire\Component;
 class Reviews extends Component
 {
     public $profile;
+
     public $author;
+
     public $content;
+
     public $rating;
 
     protected $rules = [
@@ -43,7 +46,14 @@ class Reviews extends Component
     public function render()
     {
         return view('livewire.reviews', [
-            'reviews' => $this->profile->reviews()->where('is_approved', true)->latest()->get(),
+            'reviews' => Review::query()
+                ->where('is_approved', true)
+                // ->where(function ($query) {
+                //     $query->whereNull('profile_id')
+                //         ->orWhere('profile_id', $this->profile->id);
+                // })
+                ->latest()
+                ->get(),
         ]);
     }
 }

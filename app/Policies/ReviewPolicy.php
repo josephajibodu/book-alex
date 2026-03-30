@@ -2,10 +2,8 @@
 
 namespace App\Policies;
 
-use App\Models\Profile;
 use App\Models\Review;
 use App\Models\User;
-use Illuminate\Auth\Access\Response;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ReviewPolicy
@@ -25,7 +23,8 @@ class ReviewPolicy
      */
     public function view(User $user, Review $review): bool
     {
-        return $user->role === 'admin' || $user->id === $review->profile->user_id;
+        return $user->role === 'admin'
+            || ($review->profile !== null && $user->id === $review->profile->user_id);
     }
 
     /**
@@ -41,7 +40,8 @@ class ReviewPolicy
      */
     public function update(User $user, Review $review): bool
     {
-        return $user->role === 'admin' || $user->id === $review->profile->user_id;
+        return $user->role === 'admin'
+            || ($review->profile !== null && $user->id === $review->profile->user_id);
     }
 
     /**
@@ -49,7 +49,8 @@ class ReviewPolicy
      */
     public function delete(User $user, Review $review): bool
     {
-        return $user->role === 'admin' || $user->id === $review->profile->user_id;
+        return $user->role === 'admin'
+            || ($review->profile !== null && $user->id === $review->profile->user_id);
     }
 
     /**
@@ -75,6 +76,7 @@ class ReviewPolicy
 
     public function viewInFilament(User $user, Review $review): bool
     {
-        return $user->role === 'admin' || $user->id === $review->profile->user_id;
+        return $user->role === 'admin'
+            || ($review->profile !== null && $user->id === $review->profile->user_id);
     }
 }

@@ -3,25 +3,20 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ReviewResource\Pages;
-use App\Filament\Resources\ReviewResource\RelationManagers;
 use App\Models\Review;
-use Filament\Forms;
+use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Support\Colors\Color;
 use Filament\Tables;
-use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\DateTimePicker;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Toggle;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\BooleanColumn;
 use Illuminate\Support\Facades\Auth;
 
 class ReviewResource extends Resource
@@ -39,7 +34,7 @@ class ReviewResource extends Resource
                     ->native(false)
                     ->searchable(true)
                     ->preload(true)
-                    ->required(),
+                    ->visible(fn ($operation) =>  $operation !== 'create'),
                 TextInput::make('name')->required(),
                 Textarea::make('content')->required(),
                 Select::make('rating')
@@ -65,7 +60,11 @@ class ReviewResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('profile.name')->sortable()->searchable(),
+                TextColumn::make('profile.name')
+                    ->label('Profile')
+                    ->placeholder('Global')
+                    ->sortable()
+                    ->searchable(),
                 TextColumn::make('name')->sortable()->searchable(),
                 TextColumn::make('content')->limit(50),
                 TextColumn::make('rating')->sortable(),
